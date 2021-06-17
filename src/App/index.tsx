@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Home from 'components/Home'
-import GlobalStyle from 'components/GlobalStyles'
+import GlobalStyle from 'styles/GlobalStyles'
 
 const App = (): ReactElement => (
 	<>
