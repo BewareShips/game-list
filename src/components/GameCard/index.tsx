@@ -1,10 +1,20 @@
 import React, { ReactElement } from 'react'
-import windowIcon from 'assets/icons/windows.svg'
-import browserIcon from 'assets/icons/browser.svg'
+
 import { Game } from 'types'
 
-import { Img, StyledL, Title, Details, Description, Genre, Icon } from './styles'
+import {
+	Img,
+	StyledL,
+	Title,
+	Details,
+	Description,
+	Genre,
+	Icon,
+} from './styles'
 import { BROWSER, WINDOWS } from './constans'
+
+import windowIcon from 'assets/icons/windows.svg'
+import browserIcon from 'assets/icons/browser.svg'
 
 interface Props {
 	content: Game
@@ -12,11 +22,14 @@ interface Props {
 
 const GameCard = ({ content }: Props): ReactElement => {
 	const { id, title, thumbnail, short_description, genre, platform } = content
+
 	const icons = platform.split(',').map(el => {
 		let icon = null
 		switch (el.trim()) {
 			case BROWSER:
-				icon = <Icon key={`${id}-browser`} alt="browser icon" src={browserIcon} />
+				icon = (
+					<Icon key={`${id}-browser`} alt="browser icon" src={browserIcon} />
+				)
 				break
 			case WINDOWS:
 				icon = <Icon key={`${id}-window`} alt="window icon" src={windowIcon} />

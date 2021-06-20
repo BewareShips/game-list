@@ -3,14 +3,14 @@ import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Filter, Response, Game } from 'types'
 
-const useFetch = (params: Filter): Response => {
+const useFetch = (params: Filter,search:string): Response => {
 	const [games, setGames] = useState<Game[]>([])
 	const [err, setErr] = useState<string>('')
 	const { platform, genre, tag, sortBy } = params
 
 	useEffect(() => {
 		axios({
-			url: `https://${API_HOST}/api/games`,
+			url: `https://${API_HOST}/api/${search}`,
 			method: 'get',
 			headers: {
 				'x-rapidapi-key': API_KEY,
