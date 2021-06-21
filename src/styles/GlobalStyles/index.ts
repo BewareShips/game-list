@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { fontFamily } from 'styles/fonts';
+import { fontFamily } from '../fonts/index';
 import { primaryColor } from 'styles/theme';
 
 const GlobalStyle = createGlobalStyle`
@@ -8,7 +8,6 @@ const GlobalStyle = createGlobalStyle`
   }
   body{
     width: 100%;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
