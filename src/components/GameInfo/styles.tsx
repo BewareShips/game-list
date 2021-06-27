@@ -28,12 +28,16 @@ export const CardContainer = styled.div`
 `
 
 export const Image = styled.div`
-	min-width: 30rem;
-	max-width: 30rem;
+	/* min-width: 30rem;
+	max-width: 30rem; */
 	height: 30rem;
 	transform: translateX(-6rem);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 	@media (max-width: ${breakpoints.desktop}) {
 		transform: translate(0, -6rem);
+		max-width: 100%
 	}
 
 	@media (max-width: ${breakpoints.mobile}) {
@@ -110,10 +114,29 @@ export const StyledLink = styled.a`
 	}
 `
 
-export const Im = styled.div`
-img{
-	width: 100px;
-	height: 100px;
-}
-	
+export const StyledBtn = styled.button`
+padding:  7px 15px;
+   border-radius: 5px;
+   background: rgba(0, 216, 177, 1);
+   color: #fff;
+   font-weight: bold;
+   font-size: 12px ;
+   outline: none;
+   border: 2px solid transparent;
+   transition: all 0.2s ease-in-out;
+   cursor: pointer;
+	 margin-top: 5px;
+	&:nth-child(2n){
+		margin-left: 15px;
+	}
+	 
+   &:hover {
+      background: transparent;
+      border: 2px solid rgba(0, 216, 177, 1);
+   }
+`
+export const ButtonContainer = styled.div`
+display: flex;
+justify-content:center;
+
 `

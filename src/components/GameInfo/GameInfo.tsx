@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import {
 	CardContainer,
+	ButtonContainer,
 	Image,
 	DetailsContainer,
 	Header,
@@ -10,35 +11,48 @@ import {
 	Span,
 	SpanInfo,
 	StyledLink,
-	Im,
+	StyledBtn,
 } from './styles'
 
 const GameInfo = () => {
 	const { id } = useParams<{ id: string }>()
-	const { game, error } = useFetchSingle(id)
-	const [picture, setPicture] = useState(1)
+	const { game } = useFetchSingle(id)
+	const [slideIndex, setSlideIndex] = useState(1)
+
+	const nextSlide = () => {
+		if (slideIndex !== game.screenshots.length) {
+			setSlideIndex(slideIndex + 1)
+		} else if (slideIndex === game.screenshots.length) {
+			setSlideIndex(1)
+		}
+	}
+
+	const prevSlide = () => {
+		if (slideIndex !== 1) {
+			setSlideIndex(slideIndex - 1)
+		} else if (slideIndex === 1) {
+			setSlideIndex(game.screenshots.length)
+		}
+	}
 
 	return (
 		<CardContainer>
 			{game?.screenshots.map(
 				(el, i) =>
-					picture === i && (
+					slideIndex === i + 1 && (
 						<Image>
 							<img src={el.image} />
+							<ButtonContainer>
+								<StyledBtn onClick={nextSlide}>Next</StyledBtn>
+								<StyledBtn onClick={prevSlide}>Prev</StyledBtn>
+							</ButtonContainer>
 						</Image>
 					)
 			)}
 
-			{/* <Image>
-				<img src="https://picsum.photos/1000/1000" />
-			</Image> */}
 			<div>
 				<DetailsContainer>
 					<Header>{game?.title}</Header>
-					{/* {game?.screenshots.map(
-						(el, i) => picture === i && <img src={el.image} />
-					)} */}
-
 					<Span>
 						<SpanInfo>Status:</SpanInfo>
 						{game?.status}
@@ -58,7 +72,7 @@ const GameInfo = () => {
 				</DetailsContainer>
 
 				<Text>{game?.description}</Text>
-				<StyledLink href={game?.game_url}>Read</StyledLink>
+				<StyledLink href={game?.game_url}>Link to game</StyledLink>
 			</div>
 		</CardContainer>
 	)
