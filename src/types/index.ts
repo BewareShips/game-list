@@ -4,8 +4,6 @@ export type Game = {
 	title: string;
 	thumbnail: string;
 	short_description: string;
-	description?: string;
-	status?: string;
 	game_url: string;
 	genre: string;
 	platform: string;
@@ -13,8 +11,24 @@ export type Game = {
 	developer: string;
 	release_date: string;
 	freetogame_profile_url: string;
-	minimum_system_requirements?: MinRequirements;
-	screenshots?: any[];
+};
+
+export type SingleGame = {
+	id: number;
+	title: string;
+	thumbnail: string;
+	status: string;
+	short_description: string;
+	description: string;
+	game_url: string;
+	genre: string;
+	platform: string;
+	publisher: string;
+	developer: string;
+	release_date: string;
+	freetogame_profile_url: string;
+	minimum_system_requirements: MinRequirements;
+	screenshots?: ScreenImg[];
 };
 
 export type Filter = {
@@ -36,3 +50,8 @@ export type MinRequirements = {
 	graphics: string;
 	storage: string;
 };
+
+export type ScreenImg = {
+	id: number;
+	image: string
+}

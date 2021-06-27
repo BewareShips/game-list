@@ -1,10 +1,10 @@
 import { API_KEY, API_HOST } from 'hooks/constants'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Game } from 'types'
+import { SingleGame } from 'types'
 
 const useFetchSingle = (params: string) => {
-	const [game, setGame] = useState<Game >()
+	const [game, setGame] = useState<SingleGame >()
 	const [err, setErr] = useState<string>('')
 
 	useEffect(() => {

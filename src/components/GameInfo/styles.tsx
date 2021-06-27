@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 import { breakpoints } from 'styles/breakpoints'
-import { primaryTextColor, secondaryColor} from 'styles/theme'
-
+import { primaryTextColor, secondaryColor } from 'styles/theme'
 
 export const Container = styled.div`
 	width: 100%;
@@ -85,7 +84,7 @@ export const Text = styled.p`
 
 export const Span = styled.span`
 	display: block;
-  color: ${primaryTextColor};
+	color: ${primaryTextColor};
 	font-size: 1.2rem;
 	font-weight: 500;
 	margin: 0.5rem 0;
@@ -109,4 +108,12 @@ export const StyledLink = styled.a`
 	&:hover {
 		background-image: linear-gradient(to right, #00f2fe 0%, #4facfe 110%);
 	}
+`
+
+export const Im = styled.div`
+img{
+	width: 100px;
+	height: 100px;
+}
+	
 `
