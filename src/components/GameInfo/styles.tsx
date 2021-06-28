@@ -18,7 +18,7 @@ export const CardContainer = styled.div`
 	display: flex;
 	align-items: center;
 	border-radius: 0.8rem 0;
-	border: 2px solid #fff;
+	/* border: 2px solid #fff; */
 	@media (max-width: ${breakpoints.desktop}) {
 		flex-direction: column;
 	}

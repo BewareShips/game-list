@@ -21,8 +21,9 @@ color:${secondaryTextColor};
 `;
 
 export const Label = styled.label`
-  margin-right:16px;
+  /* margin-right:16px; */
   flex-basis:25%;
+  margin: 5px 10px;
 
   &:last-of-type{
     margin-right:0
@@ -30,9 +31,13 @@ export const Label = styled.label`
 `;
 
 export const Select = styled.select`
+
   width:100%;
   margin-top:0;
   color:white;
+  padding:5px 10px;
+  outline: none;
+  font-size: 16px;
   background-color: ${backgroundColor}
-
 `;
+

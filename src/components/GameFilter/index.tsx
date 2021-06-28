@@ -1,6 +1,6 @@
 import React, { ChangeEvent, ReactElement } from 'react'
-import { GENRES, PLATFORMS, SORT_BY, TAGS } from './constants'
-import { Form, Label, Select } from './styles'
+import { GENRES, PLATFORMS, SORT_BY } from './constants'
+import { Form, Label, Select} from './styles'
 
 interface Props {
 	onChange: (e: ChangeEvent<HTMLFormElement>) => void
@@ -24,17 +24,6 @@ const GameFilter = ({ onChange }: Props): ReactElement => {
 				GENRES:
 				<Select name="genre" id="genre-select">
 					{GENRES.map(el => (
-						<option key={el.value} value={el.value}>
-							{el.display}
-						</option>
-					))}
-				</Select>
-			</Label>
-
-			<Label htmlFor="tag-select">
-				TAGS:
-				<Select name="tag" id="tag-select">
-					{TAGS.map(el => (
 						<option key={el.value} value={el.value}>
 							{el.display}
 						</option>

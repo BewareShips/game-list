@@ -37,18 +37,19 @@ const GameInfo = () => {
 
 	return (
 		<CardContainer>
-			{game?.screenshots.map(
-				(el, i) =>
+			{game?.screenshots.map((el, i) => (
+				
 					slideIndex === i + 1 && (
-						<Image>
-							<img src={el.image} />
-							<ButtonContainer>
-								<StyledBtn onClick={nextSlide}>Next</StyledBtn>
-								<StyledBtn onClick={prevSlide}>Prev</StyledBtn>
-							</ButtonContainer>
-						</Image>
+					<Image key={el.id}>
+						<img src={el.image} />
+						<ButtonContainer>
+							<StyledBtn onClick={nextSlide}>Next</StyledBtn>
+							<StyledBtn onClick={prevSlide}>Prev</StyledBtn>
+						</ButtonContainer>
+					</Image>
 					)
-			)}
+			
+			))}
 
 			<div>
 				<DetailsContainer>
@@ -78,4 +79,4 @@ const GameInfo = () => {
 	)
 }
 
-export default GameInfo
+export default React.memo(GameInfo)
